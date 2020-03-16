@@ -1,0 +1,6 @@
+<p>project-list works!</p>
+<ul>
+  <li *ngFor="let project of projects">
+    {{project.name}} <button (click) = "onDeleteClick(project)" ></button>
+  </li>
+</ul>

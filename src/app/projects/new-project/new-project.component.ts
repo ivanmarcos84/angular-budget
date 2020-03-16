@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'ab-new-project',
@@ -7,15 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProjectComponent implements OnInit {
 
-  project = {name: '' };
+  // project = {name: '' };
+  // projects: any[] = this.projectsService.projects;
+  projects: any[];
+  constructor(private projectsService: ProjectsService) {
 
-  constructor() { }
+   }
 
   ngOnInit(): void {
+
   }
 
-  saveProject() {
-    console.log(this.project.name);
+  saveProject(newProject: any) {
+    this.projects = this.projectsService.saveProject(newProject);
   }
 
+  deleteProject(project: any) {
+    this.projectsService.deleteProject(project) ; }
 }

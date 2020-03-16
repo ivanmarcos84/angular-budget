@@ -1,12 +1,9 @@
-<p>new-project works!</p>
-<form>
-  <label>
-    Nombre
-  </label>
-  <input [(ngModel)]="project.name" name="name">
-  <br />
-  <button (click)="saveProject()">Guardar</button>
-</form>
+<h4>hola</h4>
+<ab-form-presenter
+  (save)="saveProject($event)"
+  >
+</ab-form-presenter>
+<ab-project-list [projects]="projects" (delete) = deleteProject($event)></ab-project-list>
 <div>
-  {{project | json}}
+  {{projects | json}}
 </div>
